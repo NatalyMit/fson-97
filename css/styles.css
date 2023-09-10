@@ -1,9 +1,106 @@
+:root {
+  --c-brand: #fd9222;
+  --c-primary: #111;
+  --c-primary-light: #fff;
+  --c-primary-light-tr: #ffffffb2;
+  --c-background: #1e1823;
+  --c-background-light: #fafafa;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--c-primary);
+  background-color: var(--c-background-light);
+  font-size: 14px;
+}
 .logo {
-  color: #111111;
+  color: var(--c-primary);
   font-size: 18px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+.logo-accent {
+  font-style: italic;
 }
 
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  font-family: inherit;
+}
+.visually-hidden {
+}
 .nav-link {
-  color: #111111;
-  font-size: 14px;
+  color: var(--c-primary);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+}
+
+.nav-link:hover {
+  color: var(--c-brand);
+}
+
+.button-primary .hero-section {
+  background-color: var(--c-background);
+}
+.hero-title {
+  color: var(--c-primary-light);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.21;
+  letter-spacing: -0.03em;
+}
+
+.button-primary {
+  color: var(--c-primary-light);
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--c-brand);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.21;
+  letter-spacing: -0.84px;
+}
+
+.button-primary:hover {
+}
+.hero-button {
+  color: var(--c-primary-light);
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--c-brand);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.21;
+  letter-spacing: -0.84px;
+}
+
+.hero-scroll-down {
+  font-weight: 500;
+  line-height: 1.28;
+  letter-spacing: -0.03em;
+}
+
+.advantage-title {
+  color: var(--c-primary-light);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.21;
+}
+
+.advantage-text {
+  color: var(--c-primary-light-tr);
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: -0.03em;
+}
+.advantage-section {
+  background-color: var(--c-background);
 }
