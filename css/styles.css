@@ -12,18 +12,6 @@ body {
   background-color: var(--c-background-light);
   font-size: 14px;
 }
-.logo {
-  color: var(--c-primary);
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.11;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
-}
-.logo-accent {
-  font-style: italic;
-}
-
 a {
   text-decoration: none;
 }
@@ -42,7 +30,52 @@ img {
 button {
   font-family: inherit;
 }
+
+/* Header */
+.header {
+  padding-bottom: 8px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  gap: 24px;
+}
+
+.header-socials {
+  display: flex;
+  gap: 18px;
+}
 .logo {
+  color: var(--c-primary);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+.logo-accent {
+  font-style: italic;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--c-primary);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
 }
 .visually-hidden {
   position: absolute;
@@ -57,8 +90,9 @@ button {
   overflow: hidden;
 }
 .nav-link {
+  display: inline-block;
+  padding: 24px 0;
   color: var(--c-primary);
-  font-style: normal;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: -0.02em;
@@ -68,15 +102,31 @@ button {
   color: var(--c-brand);
 }
 
+/* Hero section */
+.hero-section {
+  padding-bottom: 72px;
+}
+.hero-inner {
+  padding: 380px 40px 40px;
+  background-color: var(--c-background); /* TODO: replace with image */
+  border-radius: 30px;
+}
 .button-primary .hero-section {
   background-color: var(--c-background);
 }
 .hero-title {
+  max-width: 484px;
   color: var(--c-primary-light);
   font-size: 28px;
   font-weight: 500;
   line-height: 1.21;
   letter-spacing: -0.03em;
+  margin-bottom: 32px;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
 .button-primary {
@@ -97,17 +147,58 @@ button {
 .hero-button {
   color: var(--c-primary-light);
   font-family: 'Montserrat', sans-serif;
-  background-color: var(--c-brand);
-  font-size: 28px;
+  border: 1px solid currentColor;
+  padding: 14px 40px;
+  border-radius: 100px;
   font-weight: 600;
   line-height: 1.21;
-  letter-spacing: -0.84px;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hero-button:hover {
+  color: var(--c-brand);
 }
 
 .hero-scroll-down {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: auto;
+  color: var(--c-primary-light);
   font-weight: 500;
   line-height: 1.28;
   letter-spacing: -0.03em;
+}
+.hero-scroll-down:hover {
+  color: var(--c-brand);
+}
+
+/* Advantages section */
+.advantage-section {
+  padding: 50px 0;
+  background-color: var(--c-background);
+}
+
+.advantage-list {
+  display: flex;
+  gap: 70px;
+}
+
+.advantage-item:not(:last-child) {
+  padding-right: 18px;
+  border-right: 1px solid var(--c-primary-light-tr);
+}
+
+.advantage-icon {
+  width: 62px;
+  height: 62px;
+  margin-bottom: 22px;
+  border: 1px solid var(--c-primary-light-tr);
+  border-radius: 50%;
 }
 
 .advantage-title {
@@ -135,3 +226,55 @@ button {
   margin: 0 auto;
   padding: 0 32px;
 }
+.ingridients-title {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.ingridients-subtitle {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.ingridients-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.ingridients-item {
+  flex-basis: calc((100% - 60px) / 4);
+}
+
+.ingridient {
+  border: 1px solid var(--c-brand);
+  border-radius: 15px;
+  padding: 28px;
+}
+
+/* Video section */
+.video-inner {
+  display: flex;
+  gap: 20px;
+}
+
+.video-media {
+  flex-basis: calc((100% - 20px) / 2);
+}
+
+.video-background {
+  border-radius: 15px;
+  object-fit: cover;
+  height: 100%;
+}
+
+.video-play {
+  /* TODO: center play button in video */
+  display: none;
+}
+
+.video-content {
+  padding: 32px;
+  flex-basis: calc((100% - 20px) / 2);
+}
+/* END Video section */
