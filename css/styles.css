@@ -6,11 +6,27 @@
   --c-background: #1e1823;
   --c-background-light: #fafafa;
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   color: var(--c-primary);
   background-color: var(--c-background-light);
   font-size: 14px;
+  margin: 0;
 }
 a {
   text-decoration: none;
