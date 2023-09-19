@@ -46,7 +46,11 @@ img {
 button {
   font-family: inherit;
 }
-
+.container {
+  width: 1200px;
+  margin: 0;
+  padding: 0 32px;
+}
 /* Header */
 .header {
   padding-bottom: 8px;
@@ -105,6 +109,13 @@ button {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
 .nav-link {
   display: inline-block;
   padding: 24px 0;
@@ -188,6 +199,7 @@ button {
   font-weight: 500;
   line-height: 1.28;
   letter-spacing: -0.03em;
+  fill: var(--c-brand);
 }
 .hero-scroll-down:hover {
   color: var(--c-brand);
@@ -294,3 +306,33 @@ button {
   flex-basis: calc((100% - 20px) / 2);
 }
 /* END Video section */
+
+/*Products section*/
+/*end products section*/
+
+/* footer*/
+.footer-section {
+  background: #1e1823;
+  color: var(--c-primary-light);
+}
+.bg-footerh {
+  color: var(--c-brand);
+}
+.footer-hero {
+  margin: 50px 0px 152px 0px;
+}
+.social-link-f {
+  color: var(--c-primary-light);
+  text-decoration: none;
+  text-transform: none;
+}
+.list-footer {
+  display: flex;
+  gap: 24px;
+  color: var(--c-primary-light);
+}
+
+.items-footer {
+  width: calc((100%-96px) / 4);
+}
+/*end footer*/
