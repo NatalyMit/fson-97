@@ -1,10 +1,14 @@
 :root {
   --c-brand: #fd9222;
   --c-primary: #111;
+  --c-primary-tr: #1111111a;
   --c-primary-light: #fff;
   --c-primary-light-tr: #ffffffb2;
   --c-background: #1e1823;
   --c-background-light: #fafafa;
+}
+html {
+  scroll-behavior: smooth;
 }
 *,
 *::before,
@@ -46,10 +50,25 @@ img {
 button {
   font-family: inherit;
 }
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
 .container {
   width: 1200px;
   margin: 0;
   padding: 0 32px;
+}
+.section-title {
+  color: var(--c-primary);
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.16;
+  letter-spacing: -0.3em;
+  text-transform: uppercase;
+  margin-bottom: 50px;
 }
 /* Header */
 .header {
@@ -73,6 +92,14 @@ button {
 .header-socials {
   display: flex;
   gap: 18px;
+}
+.header-socials-link {
+  fill: none;
+  stroke: var(--c-primary);
+  transition: stroke 0.2s;
+}
+.header-socials-link:hover {
+  stroke: var(--c-brand);
 }
 .logo {
   color: var(--c-primary);
@@ -137,7 +164,12 @@ button {
   padding: 380px 40px 40px;
   background-color: var(--c-background); /* TODO: replace with image */
   border-radius: 30px;
+  background-image: url('../images/background-logo/chocolate-covered-cocoa-powder\ 1.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
+
 .button-primary .hero-section {
   background-color: var(--c-background);
 }
@@ -190,7 +222,7 @@ button {
   color: var(--c-brand);
 }
 
-.hero-scroll-down {
+.hero-arrow {
   display: flex;
   align-items: center;
   gap: 14px;
@@ -201,8 +233,34 @@ button {
   letter-spacing: -0.03em;
   fill: var(--c-brand);
 }
-.hero-scroll-down:hover {
+
+.hero-arrow:hover {
   color: var(--c-brand);
+}
+.hero-arrow:hover .hero-arrow-link {
+  fill: var(--c-primary);
+}
+.hero-arrow-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  fill: var(--c-brand);
+  background-color: var(--c-primary-light);
+  border-radius: 50%;
+  animation: bounce 1s infinite reverse;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* Advantages section */
@@ -218,15 +276,30 @@ button {
 
 .advantage-item:not(:last-child) {
   padding-right: 18px;
-  border-right: 1px solid var(--c-primary-light-tr);
+  position: relative;
+}
+.advantage-item:not(:last-child)::after {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 124px;
+  height: 1px;
+  content: '';
+  background-color: var(--c-primary-light-tr);
+  transform: rotate(-90deg) translateX(50%);
+  transform-origin: 100% 0;
 }
 
 .advantage-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 62px;
   height: 62px;
   margin-bottom: 22px;
   border: 1px solid var(--c-primary-light-tr);
   border-radius: 50%;
+  fill: var(--c-brand);
 }
 
 .advantage-title {
@@ -253,10 +326,6 @@ button {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 32px;
-}
-.ingridients-title {
-  text-align: center;
-  margin-bottom: 28px;
 }
 
 .ingridients-subtitle {
@@ -308,9 +377,66 @@ button {
 /* END Video section */
 
 /*Products section*/
+.product-list {
+  display: flex;
+  gap: 18px;
+}
+.product-item {
+  flex-basis: calc((100-54px) / 4);
+}
+.product {
+  border: 1px solid var(--c-primary-tr);
+  background-color: var(--c-background-light);
+  padding: 32px 20px;
+  border-radius: 15px;
+  text-align: center;
+}
+.product-image {
+  position: relative;
+  overflow: hidden;
+}
+.product-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 12px;
+  background: var(--c-brand);
+  color: var(--c-primary-light);
+  transform: translateY(100%);
+  transition: transform 100%;
+}
+.product:hovar .product-overlay {
+  transform: translateY(0);
+}
+
 /*end products section*/
 
-/* footer*/
+/*Reviews-section*/
+.reviews-list {
+  display: flex;
+  gap: 28px;
+}
+.reviews-item {
+  flex-basis: calc((100%-56px)-3);
+  position: relative;
+}
+.reviews {
+  border: 1px solid var(--c-primary-tr);
+  background-color: var(--c-background-light);
+  box-shadow: 0px 9px 26px 0px var(--c-primary-light-tr);
+  padding: 56px 24px 42px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.review-image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*end reviews-section*/
+
 .footer-section {
   background: #1e1823;
   color: var(--c-primary-light);
@@ -336,3 +462,39 @@ button {
   width: calc((100%-96px) / 4);
 }
 /*end footer*/
+
+/*modal*/
+.backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
+}
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.modal {
+  position: relative;
+  width: 610px;
+  background-color: var(--c-background-light);
+  border-radius: 15px;
+  padding: 48px;
+  transform: scale(1) rotate(0);
+  transition: transform 250ms ease-in-out;
+}
+.backdrop.is-hidden .modal {
+  transform: scale(0) rotate(360deg);
+}
+.modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+/*end modal*/
