@@ -192,7 +192,7 @@ fieldset {
   padding: 380px 40px 40px;
   background-color: var(--c-background);
   border-radius: 30px;
-  background-image: url('../images/hero-bg.jpg');
+  background-image: url('../images/background-logo/chocolate-bg.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -462,8 +462,9 @@ fieldset {
 
 .reviews-item {
   position: relative;
-  /* flex-basis: calc((100% - 56px) / 3); */
-  flex-basis: 100%;
+
+  flex-basis: calc((100% / 3) - 56px);
+  /* flex-basis: 100%; */
 }
 
 /* .reviews-item:not(:first-child) {
@@ -502,7 +503,97 @@ fieldset {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.btn-review {
+  margin-top: 94px;
+
+  color: var(--c-primary);
+  background-color: var(--c-primary-light);
+  cursor: pointer;
+  padding: 14px 40px;
+  border-radius: 100px;
+  font-weight: 600;
+  line-height: 1.21;
+  border-color: var(--c-brand);
+}
+.btn-review:hover {
+  background-color: var(--c-brand);
+  color: var(--c-primary-light);
+}
 /* END Reviews section */
+/* Footer-class*/
+
+.footer-class {
+  background-color: rgb(30, 24, 35);
+}
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 62px;
+  padding-top: 50px;
+  padding-left: 32px;
+}
+.footer-title {
+  display: flex;
+  flex-direction: column;
+  color: var(--c-primary-light);
+}
+.footer-span {
+  color: var(--c-brand);
+}
+.address_style {
+  display: flex;
+  flex-direction: column;
+}
+.footer-text {
+  color: var(--c-primary-light);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+}
+.footer-div-address {
+  display: flex;
+  flex-direction: row;
+  gap: 70px;
+}
+.footer_address {
+  display: flex;
+  gap: 4px;
+  text-decoration: none;
+  color: var(--c-primary-light);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+}
+.footer-nav {
+  padding-bottom: 50px;
+  padding-left: 32px;
+}
+.footer-nav-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 25px;
+  display: flex;
+  gap: 24px;
+}
+.footer-nav-link {
+  color: var(--c-primary-light);
+}
+.footer-socials {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-socials-link {
+  fill: none;
+  stroke: var(--c-primary-light);
+  transition: stroke 0.2s;
+}
+
+.footer-socials-link:hover {
+  stroke: var(--c-brand);
+}
 
 /* Modal */
 .backdrop {
